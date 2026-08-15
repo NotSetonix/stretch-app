@@ -1,50 +1,63 @@
-# Welcome to your Expo app 👋
+# Desk Reset
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A React Native mobile application built with Expo for CSI2114 Sprint 1.
 
-## Get started
+## Target Domain
 
-1. Install dependencies
+Health & Fitness — specifically workplace and screen-related musculoskeletal health.
 
-   ```bash
-   npm install
-   ```
+## Problem Statement
 
-2. Start the app
+This is for people who spend very long stretches at a screen. I'm at around 12 hours a day between addon production work and study.
+This is because of my shoulder pain and numbness that builds over a working day
+In the past I tried physiotherapy, balms and ointments. The treatments themselves work; what fails is doing them consistently once I'm back at the desk.
+I realized because it's an inconsistency problem rather than a knowledge problem, what's needed is something that makes the right stretch quick to find in the moment, not another long guide to read.
 
-   ```bash
-   npx expo start
-   ```
+## How the App Solves It
 
-In the output, you'll find options to open the app in a
+Tapping "Shoulders" shows only shoulder stretches, so finding something relevant takes seconds. Connect it to your consistency point: the faster it is to find, the more likely you actually do it.
+Numbered steps and a common mistake, so the stretch is done correctly rather than guessed at.
+Each stretch states its duration, which removes the "how long is enough" question.
+The app doesn't try to replace physiotherapy, it just lowers the effort of doing the right thing during a work session.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## Features
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+- Browse 12 stretches organised by body area
+- Filter by body area (Wrists, Neck, Shoulders, Back, Hips, Eyes)
+- Detail view with step-by-step instructions, hold time, difficulty, and common mistakes
+- Settings screen with display preferences
+- Counter tracking how many stretches have been viewed this session
 
-## Get a fresh project
+## Technical Implementation
 
-When you're ready, run:
+- **Navigation:** Expo Router file-based routing. A root stack contains a tab group (Home, Settings); the detail screen is a dynamic route at `app/stretch/[id].tsx` that sits in the root stack so it slides over the tabs with a back button.
+- **FlatList:** Renders 12 items from a local array in `data/stretches.js`, with `keyExtractor` using each item's unique `id`.
+- **State:** `useState` hooks manage the selected body-area filter and the viewed counter on Home, and two display toggles on Settings. Changing state via its setter triggers a re-render, which is how the filtered list updates on tap.
+- **Data:** Static local array, separated from presentation so screens import rather than contain content.
 
-```bash
-npm run reset-project
-```
+## Setup Instructions
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+1. Clone the repository:
+   `git clone https://github.com/NotSetonix/stretch-app.git`
+2. Install dependencies:
+   `npm install`
+3. Start the development server:
+   `npx expo start`
+4. Scan the QR code with the Expo Go app on an Android device, or press `a` to open an Android emulator.
 
-## Learn more
+Requires Node.js (LTS) and the Expo Go app.
 
-To learn more about developing your project with Expo, look at the following resources:
+## Screenshots
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+### Home
+![Home screen](screenshots/home.png)
 
-## Join the community
+### Detail
+![Detail screen](screenshots/detail.png)
 
-Join our community of developers creating universal apps.
+### Settings
+![Settings screen](screenshots/settings.png)
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## Note
+
+Stretch guidance in this app is general information, not medical advice.
