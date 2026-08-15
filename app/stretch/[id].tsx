@@ -1,4 +1,4 @@
-import { useLocalSearchParams } from 'expo-router';
+import { Stack, useLocalSearchParams } from 'expo-router';
 import { ScrollView, Text } from 'react-native';
 import { STRETCHES } from '../../data/stretches';
 
@@ -12,6 +12,8 @@ export default function StretchDetail() {
 
   return (
     <ScrollView style={{ flex: 1, backgroundColor: 'white', padding: 20 }}>
+      <Stack.Screen options={{ title: stretch.name }} />
+
       <Text style={{ fontSize: 24, fontWeight: 'bold' }}>{stretch.name}</Text>
       <Text style={{ marginTop: 8 }}>{stretch.area} · {stretch.seconds} seconds · {stretch.difficulty}</Text>
       <Text style={{ marginTop: 16 }}>{stretch.summary}</Text>
