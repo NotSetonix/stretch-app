@@ -103,6 +103,9 @@ Requires Node.js (LTS) and Expo Go.
 ### Empty state
 ![Empty state](screenshots/empty.png)
 
+### Loading
+![Loading state](screenshots/loading.png)
+
 ## Note
 
 Stretch guidance in this app is general information, not medical advice.
