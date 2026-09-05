@@ -89,22 +89,22 @@ Requires Node.js (LTS) and Expo Go.
 ![Home screen](screenshots/home.jpeg)
 
 ### Detail
-![Detail screen](screenshots/detail.png)
+![Detail screen](screenshots/detail.jpeg)
 
 ### Settings
 ![Settings screen](screenshots/settings.jpeg)
 
 ### Add / Edit
-![Add stretch form](screenshots/form.png)
+![Add stretch form](screenshots/form.jpeg)
 
 ### Offline
-![Offline banner](screenshots/offline.png)
+![Offline banner](screenshots/offline.jpeg)
 
 ### Empty state
-![Empty state](screenshots/empty.png)
+![Empty state](screenshots/empty.jpeg)
 
 ### Loading
-![Loading state](screenshots/loading.png)
+![Loading state](screenshots/loading.jpeg)
 
 ## Note
 
